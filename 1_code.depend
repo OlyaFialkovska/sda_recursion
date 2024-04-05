@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1712304633 source:d:\univer\sda\laba_2_4_recursion\1_code\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
