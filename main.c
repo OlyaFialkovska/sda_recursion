@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-int n=5;
-float sum_comp(float f,int i)
-{
-    if(i<=n)
-    {
-        f=sqrt(f*i)/log(i+1);
-        printf("f |%d|\t =\t%.3lf\n",i,f);
-        return f+sum_comp(f,i+1);
-    }else f=1;
-}
+//cycle code
 int main()
 {
-    float f=1,sum=0;
+    double f=1,sum=f;
+    int i,n;
+    printf("Input n:");
+    scanf("%d",&n);
     printf("f |%d|\t =\t%.3lf\n",1,f);
-    sum=sum_comp(f,2);
+
+    for(i=2;i<=n;i++)
+    {
+        sum+=sqrt(f*i)/log(i+1);
+        f=sqrt(f*i)/log(i+1);
+        printf("f |%d|\t =\t%.3lf\n",i,f);
+    }
+
     printf("Sum\t =\t%lf",sum);
     return 0;
 }
