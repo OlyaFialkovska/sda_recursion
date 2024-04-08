@@ -1,21 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-//cycle code
-int main()
+float f=1;
+float sum_comp(int i)
 {
-    double f=1,sum=f;
-    int i,n;
-    printf("Input n:");
-    scanf("%d",&n);
-    printf("f |%d|\t =\t%.3lf\n",1,f);
-
-    for(i=2;i<=n;i++)
+    float sum;
+    if(i>1)
     {
-        sum+=sqrt(f*i)/log(i+1);
+        sum=sum_comp(i-1);
         f=sqrt(f*i)/log(i+1);
         printf("f |%d|\t =\t%.3lf\n",i,f);
-    }
-
+        sum+=f;
+    }else sum=1;
+    return sum;
+}
+int main()
+{
+    float sum;
+    int n;
+    printf("Input n:");
+    scanf("%d", &n);
+    printf("f |%d|\t =\t%.3lf\n",1,f);
+    sum=sum_comp(n);
     printf("Sum\t =\t%lf",sum);
     return 0;
 }
